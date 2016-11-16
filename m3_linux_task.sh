@@ -1,0 +1,1 @@
+wget -q http://vc-dynamo.ru/command/players/ volleyball.txt | grep -o -E 'pltit.*?<\/b>' > volleyball1.txt | grep -o -E 'Рост: ...' > volleyball2.txt |sed -e 's/pltit>/Игрок-/' -e 's/<\/span>&nbsp;/ /' -e 's/<\/b>/ /' volleyball1.txt > volleyball1.txt |paste --delimiters=- volleyball1.txt volleyball2.txt > volleyball3.txt
