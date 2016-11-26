@@ -1,4 +1,4 @@
-\documentclass{book}
+\documentclass[fleqn]{book}
 
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
@@ -6,6 +6,7 @@
 
 \usepackage[a4paper,top=3cm,bottom=2cm,left=4.5cm,right=4.5cm,marginparwidth=1.75cm]{geometry}
 
+\usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
@@ -13,14 +14,13 @@
 
 \pagestyle{empty}
 
-\setcounter{section}{2}
-\setcounter{subsection}{4}
+\setcounter{chapter}{2}
+\setcounter{section}{4}
 \newcounter{pro1}
 \setcounter{pro1}{20}
 \newcommand{\pro}{\par\addtocounter{pro1}{1}%
-\textbf{Problem \arabic{section}.\arabic{pro1} }\quad}
-\newcounter{equa}
-\setcounter{equa}{30}
+\textbf{Problem \arabic{chapter}.\arabic{pro1} }\quad}
+\setcounter{equation}{29}
 
 \begin{document}
 To test this prediction, I constructed the small and large cones described on~page~21,~held one in each hand above my head, and let them fall.
@@ -34,13 +34,15 @@ The cone home experiment yourself (page~21).\\
 \pro
 \textbf{Home experiment of four stacked cones versus one cone}\\
 Predict the ratio
-\[\frac{\text{terminal velocity of four small cones stacked inside each other}}{\text{terminal velocity of one small cone}}. \eqno(2.30)\]
+\begin{equation}
+\frac{\text{terminal velocity of four small cones stacked inside each other}}{\text{terminal velocity of one small cone}}.
+\end{equation}
 Test your prediction. Can you find a method not requiring timing equipment?\\
 \pro
 \textbf{Estimating the terminal speed}\\
 Estimate or look up the areal density of paper; predict the cones’ terminal speed;
 and then compare that prediction to the result of the home experiment.
-\subsection{Summary and further problems}
+\section{Summary and further problems}
 A  correct  solution  works  in  all  cases, including  the  easy  ones.   There-fore, check any proposed formula in the easy cases, and guess formulas by constructing expressions that pass all easy-cases tests. To apply and extend these ideas, try the following problems and see the concise and instructive book by Cipra [10].\\
 \pro
 \textbf{Fencepost errors}\\
@@ -48,8 +50,9 @@ A garden has 10~m of horizontal fencing that you would like to divide into 1~m s
 \pro
 \textbf{Odd sum}\\
 Here is the sum of the first $n$ odd integers:
-\addtocounter{equa}{1}
-\[S_n=\underbrace{1+3+5+\cdots+l_n}_\textnormal{n terms} \eqno(2.31)\]
+\begin{equation}
+S_n=\underbrace{1+3+5+\cdots+l_n}_\textnormal{n terms}
+\end{equation}
 \begin{itemize}
 \item[a.]\ Does the last term $\textnormal{l}_n$ equal $2\textnormal{n}+1$ or $2\textnormal{n}-1$?
 \item[b.]\ Use easy cases to guess $\textnormal{S}_n$ (as a function of n).
@@ -63,9 +66,9 @@ Then solve the free-fall differential equation to find the exact $v_i$~, and com
 \pro
 \textbf{Low Reynolds number}\\
 In the limit $\mbox{Re}\ll 1$~, guess the form of f in
-\[
-\frac{\mbox{F}}{\rho v^2 \mbox{r}^2}=\mbox{f}\left(\frac{\mbox{r}v}{v}\right)\eqno(2.32) 
-\]\\
+\begin{equation}
+\frac{\mbox{F}}{\rho v^2 \mbox{r}^2}=\mbox{f}\left(\frac{\mbox{r}v}{v}\right)
+\end{equation}\\
 The result, when combined with the correct dimensionless constant, is known
 as Stokes drag [12].\\
 \pro
@@ -85,8 +88,57 @@ The tape mark on the large cone template (page~21) is twice as wide as the tape
 mark on the small cone template.
 In other words, if the tape on the large cone is, say, 6\,mm wide, the tape on the small cone should be 3\,mm wide.
 Why?\newpage
-\section{Lumping}
+\chapter{Lumping}
+Where will an orbiting planet be 6 months from now?
+To predict its new location, we cannot simply multiply the 6 months by the planet’s current velocity, for its velocity constantly varies.
+Such calculations are the reason that calculus was invented.
+Its fundamental idea is to divide the time into tiny intervals over which the velocity is constant, to multiply each tiny time by the corresponding velocity to compute a tiny distance, and then to add the tiny distances.
 
+Amazingly, this computation can often be done exactly, even when the intervals have infinitesimal width and are therefore infinite in number.
+However, the symbolic manipulations can be lengthy and, worse, are often rendered impossible by even small changes to the problem.
+Using calculus methods, for example, we can exactly calculate the area under the Gaussian $e^{-x^2}$ between $x=0$ and $\infty$; yet if either limit is any value except zero or infinity, an exact calculation becomes impossible.
 
+In contrast, approximate methods are robust: They almost always provide a reasonable answer.
+And the least accurate but most robust method is lumping.
+Instead of dividing a changing process into many tiny pieces, group or lump it into one or two pieces.
+This simple approximation and its advantages are illustrated using examples ranging from demographics (Section 3.1) to nonlinear differential equations (Section 3.5).\newpage
+\section{ Estimating populations: How many babies?}
 
+The first example is to estimate the number of babies in the United States.
+For definiteness, call a child a baby until he or she turns 2 years old.
+An exact calculation requires the birth dates of every person in the United States.
+This, or closely similar, information is collected once every decade by the US Censu~Bureau.\\
+\hangindent=-3cm\hangafter=4
+As an approximation to this voluminous data, the Census Bureau [47] publishes the number of people at each age.
+The data for $1991$ is a set of points lying on a wiggly line$N(t)$, where $t$ is age.
+Then
+\begin{flushleft}
+\begin{equation}
+N_\text{babies}=\int^{2 \text{yr}}_0 N(t)dt
+\end{equation}
+\end{flushleft}
+\pro
+\textbf{Dimensions of the vertical axis}
+Why is the vertical axis labeled in units of people per year rather than in units
+of people?  Equivalently, why does the axis have dimensions of $T^{-1}$?\\
+
+This method has several problems.
+First, it depends on the huge resources of the US Census Bureau, so it is not usable on a desert island for back-of-the-envelope calculations.
+Second, it requires integrating a curve with no analytic form, so the integration must be done numerically.
+Third, the integral is of data specific to this problem, whereas mathematics should be about generality.
+An exact integration, in short, provides little insight and has minimal transfer value.
+Instead of integrating the population curve exactly, approximate it---lump the curve into one rectangle.\\
+\begin{flushleft}
+$\blacktriangleright$ \textit{What are the height and width of this rectangle?}
+\end{flushleft}
+
+The rectangle’s width is a time, and a plausible time related to populations is the life expectancy.
+It is roughly $80$ years, so make $80$ years the width by pretending that everyone dies abruptly on his or her $80$\,th birthday.
+The rectangle’s height can be computed from the rectangle’s area, which
+is the US population---conveniently $300$ million in $2008$.
+Therefore,
+\begin{equation}
+\text{height}=\frac{\text{area}}{\text{width}}\thicksim\frac{3 \times 10^8}{75 \text{yr}}
+\end{equation}
+$\blacktriangleright$ \textit{Why did the life expectancy drop from $80$ to $75$ years?}\newpage
 \end{document}
