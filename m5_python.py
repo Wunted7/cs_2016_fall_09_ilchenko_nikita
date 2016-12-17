@@ -1,10 +1,14 @@
-def plus(list):
+def plus(list0):
     s = 0
-    for i in list:
-        s = s + i
-    print(s)
-def plus1(list):
+    for x in list0:
+        s += x
+    return s
+
+
+def plus1(list0):
     s = 0
-    a = len(list)
-    while a > -1:
-        s = s +
+    a = len(list0)
+    while a > 0:
+        s += list0[a-1]
+        a -= 1
+    return s
