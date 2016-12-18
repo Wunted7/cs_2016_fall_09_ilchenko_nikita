@@ -59,3 +59,9 @@ def fact(n):
         return 1
     f = n * fact(n - 1)
     return f
+
+
+def ro(a, b, c, d):
+    import math
+    l = math.sqrt((c-a)**2+(d-b)**2)
+    return l
