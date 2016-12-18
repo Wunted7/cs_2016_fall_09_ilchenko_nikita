@@ -33,4 +33,23 @@ def step(n):
 
 def mid(list0):
     a = len(list0)
-    return reduce(lambda x, y: x+y, list0)/float(a)
+    return reduce(lambda x, y: x + y, list0) / float(a)
+
+
+def fib(n):
+    i = 0
+
+    def fib1(x):
+        a = 0
+        b = 1
+        for __ in range(x):
+            a, b = b, a + b
+        return a
+    while fib1(i) < n:
+        i += 1
+
+    if fib1(i) == n:
+        print i
+    else:
+        print -1
+
