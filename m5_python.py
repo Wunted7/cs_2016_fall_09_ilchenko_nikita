@@ -61,7 +61,25 @@ def fact(n):
     return f
 
 
+def mima(list0):
+    b = 0
+    c = 0
+    a = len(list0)
+    for i in range(a):
+        if list0[i] == min(list0):
+            b = i
+        if list0[i] == max(list0):
+            c = i
+    list0[b], list0[c] = list0[c], list0[b]
+    return list0
+
+
 def ro(a, b, c, d):
     import math
-    l = math.sqrt((c-a)**2+(d-b)**2)
+    l = math.sqrt((c - a) ** 2 + (d - b) ** 2)
     return l
+
+
+def graf(a, b):
+    g = 3.711
+    pass
