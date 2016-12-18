@@ -28,4 +28,9 @@ def step(n):
     i = 0
     while 2 ** i <= n:
         i += 1
-    print  i - 1, 2 ** (i - 1)
+    print i - 1, 2 ** (i - 1)
+
+
+def mid(list0):
+    a = len(list0)
+    return reduce(lambda x, y: x+y, list0)/float(a)
