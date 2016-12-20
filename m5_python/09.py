@@ -80,6 +80,37 @@ def ro(a, b, c, d):
     return l
 
 
-def graf(a, b):
+def graf(lista, listb):
+    import math
+    import matplotlib.pyplot as plt
+    import numpy as np
     g = 3.711
-    pass
+    fib3 = lista.split()
+    b1 = []
+    for i in fib3:
+        b1.append(float(i))
+    v = sum(b1)
+    fib2 = listb.split()
+    b1 = []
+    for i in fib2:
+        b1.append(float(i))
+    h = sum(b1)
+    m = h * math.pi / 180
+    t4 = 1
+    t2 = 1
+    while t2 > 0:
+        t2 = v * math.sin(m) * t4 - (g * t4 ** 2) / 2
+        t4 += 0.01
+    t = np.arange(0, t4, 0.01)
+    t1 = v * math.cos(m) * t
+    t2 = (v * math.sin(m) * t - (g * t ** 2) / 2)
+    plt.plot(t1, t2)
+    plt.axis('equal')
+    plt.xlabel(r'$S$')
+    plt.ylabel(r'$H$')
+    plt.title(r'$Speed on Mars$')
+    plt.grid(True)
+    plt.show()
+
+
+graf([30], [30])
