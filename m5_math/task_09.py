@@ -80,21 +80,21 @@ def ro(a, b, c, d):
     return l
 
 
-def gra(a, b):
+def graf(a, b):
     import math
     import matplotlib.pyplot as plt
     import numpy as np
     g = 3.711
-    v = float(a)
+    c = float(a)
     m = b * math.pi / 180
-    t4 = 1
+    t1 = 1
     t2 = 1
     while t2 > 0:
-        t2 = v * math.sin(m) * t4 - (g * t4 ** 2) / 2
-        t4 += 0.01
-    t = np.arange(0, t4, 0.01)
-    t1 = v * math.cos(m) * t
-    t2 = (v * math.sin(m) * t - (g * t ** 2) / 2)
+        t2 = c * math.sin(m) * t1 - (g * t1 ** 2) / 2
+        t1 += 0.01
+    t = np.arange(0, t1, 0.01)
+    t1 = c * math.cos(m) * t
+    t2 = (c * math.sin(m) * t - (g * t ** 2) / 2)
     plt.plot(t1, t2)
     plt.axis('equal')
     plt.xlabel(r'$S$')
