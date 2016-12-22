@@ -95,6 +95,7 @@ def graf(a, b):
     s = a * math.cos(m) * t
     h = (a * math.sin(m) * t - (g * t ** 2) / 2)
     plt.plot(s, h)
+    plt.axis('equal')
     plt.xlabel(r'$S$')
     plt.ylabel(r'$H$')
     plt.title(r'$Speed$ $on$ $Mars$')
