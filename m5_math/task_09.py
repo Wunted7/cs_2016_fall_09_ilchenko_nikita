@@ -85,18 +85,16 @@ def graf(a, b):
     import matplotlib.pyplot as plt
     import numpy as np
     g = 3.711
-    c = float(a)
     m = b * math.pi / 180
     t1 = 1
     t2 = 1
     while t2 > 0:
-        t2 = c * math.sin(m) * t1 - (g * t1 ** 2) / 2
+        t2 = a * math.sin(m) * t1 - (g * t1 ** 2) / 2
         t1 += 0.01
     t = np.arange(0, t1, 0.01)
-    t1 = c * math.cos(m) * t
-    t2 = (c * math.sin(m) * t - (g * t ** 2) / 2)
-    plt.plot(t1, t2)
-    plt.axis('equal')
+    s = a * math.cos(m) * t
+    h = (a * math.sin(m) * t - (g * t ** 2) / 2)
+    plt.plot(s, h)
     plt.xlabel(r'$S$')
     plt.ylabel(r'$H$')
     plt.title(r'$Speed$ $on$ $Mars$')
