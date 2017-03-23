@@ -3,15 +3,20 @@
 
 int main()
 {
+    char c;
     char a[100];
     int k[100];
-    int i,max;
+    int i=0,max;
     max=k[0];
+    int l=0;
     printf("Введите строку:\n");
-    scanf("%s", a);
-    for (i=0;i<strlen(a);++i)
+    while((c=getchar())!='\n'){
+        a[i]=c;
+        ++i;
+        ++l;
+    }
+    for (i=0;i<l;++i){
         k[i]=(int)a[i];
-    for (i=0;i<strlen(a);++i){
         if (max<k[i])
             max=k[i];
     }
