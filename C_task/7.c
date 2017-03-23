@@ -19,7 +19,7 @@ int main()
             printf("%i\n", x*y);
             break;
         case '/':
-            printf("%.3f\n", x/y);
+            printf("%.3f\n", (float)x/y);
             break;
         case '%':
             printf("%i\n", x%y);
