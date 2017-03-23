@@ -18,6 +18,9 @@ int main()
         case '*':
             printf("%i\n", x*y);
             break;
+        case '/':
+            printf("%.3f\n", x/y);
+            break;
         case '%':
             printf("%i\n", x%y);
             break;
