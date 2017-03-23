@@ -13,8 +13,6 @@ int main()
         printf("C|%.2f|%.2f|F\n", c, f);
         c+=l;
     }while (c<t2);
-    if (c<t2){
     printf("C|%.2f|%.2f|F\n", t2 ,1.8*t2+32 );
-    }
     return 0;
 }
