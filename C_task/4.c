@@ -4,7 +4,7 @@ int main()
 {
     int x, y;
     scanf("%i,%i", &x,&y);
-    swap(float,x,y);
+    swap(int,x,y);
     printf("%i %i\n", x ,y);
     return 0;
 }
