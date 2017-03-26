@@ -2,10 +2,12 @@
 
 int main()
 {
-	int a=17;
-	int b=9;
-	int c=b;
-	int e=a;
-	printf("%i,%i-->%i,%i",a,b,c,e);
+	int day=17;
+	int month=9;
+	printf("%i.%i", day, month);
+	int c=day;
+	day=month;
+	month=c;
+	printf("%i.%i", day, month);
 	return 0;
 }
