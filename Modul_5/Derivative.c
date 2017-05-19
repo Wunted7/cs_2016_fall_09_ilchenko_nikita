@@ -15,6 +15,7 @@ int main()
 	double D[] = { 0.0, 0.0 };
 
 	char sign;
+	printf("Enter error");
 	scanf("%c", &sign);
 	char string[] = "%.xf\n";
 	string[2] = sign;
@@ -33,5 +34,7 @@ int main()
 		x = x + h;
 		printf(string, Dif);
 	}
+	getchar();
+	getchar();
 	return 0;
 }
