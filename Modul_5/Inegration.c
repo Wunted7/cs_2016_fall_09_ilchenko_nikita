@@ -37,7 +37,7 @@ int main()
 				I += 0.0;
 			}
 			else {
-				I[1] += 2 * function(x);
+				I += 2 * function(x);
 				x += h1;
 			}
 		}
