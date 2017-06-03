@@ -11,6 +11,7 @@ int main()
 	double d_lim;
 	double h_lim;
 	char sign;
+	printf("Введите нижний предел, верхний предел и в каком знаке нужна точность(например, 1 2 3)\n");
 	scanf("%lf %lf %c", &d_lim, &h_lim, &sign);
 	double S[] = { 0.0, 0.0 };
 	double Su = 0.0;
